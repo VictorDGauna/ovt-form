@@ -1,0 +1,387 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <br>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-12 col-md-6 offset-md-3">
+            <div class="card">
+                <div class="card-body">
+                   
+                    <form action="{% url 'success' %}" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="form-step form-step-active">
+                            <label for="referred" class="form-label"><h1>Who Referred You?</h1></label>
+                            <div class="form-text" id="referredhelp">ie:Facebook, website or Name the friend or associate that
+                                    referred you
+                            </div>
+                            <div class="p-3">
+                                {{ form.who | as_crispy_field }}
+                                
+                            </div>
+                            <br>
+                            <div class="d-grid gap-2 col6 mx-auto">
+                                <a type="button" class="btn btn-outline-warning btn-next ">NEXT </a>
+                                <!-- <input type="submit" value="send" class="btn btn-outline-warning"> -->
+                
+                            </div>
+                        
+                        </div>
+                        <div class="form-step ">
+                            <label for="referred" class="form-label"><h1>What serice are you requesting</h1></label>
+                            <div class="form-text" id="referredhelp">Service or Product Requesting</div>
+                            {{form.serviceOption | as_crispy_field}}
+                            <br>
+                            <div class="btns-group">
+                                <a href="#" class="btn btn-outline-warning btn-prev">Previous</a>
+                                <a href="#" class="btn btn-outline-warning btn-next">Next</a>
+                            </div>
+                        </div>
+                        <div class="form-step ">
+                            <label for="enrichment" class="form-label"><h1>Credit Monitoring</h1></label>
+                            <hr>
+                            <div class="form-text">For CREDIT ENRICHMENT please go to <a href="http://bit.ly/myIQscore">http://bit.ly/myIQscore</a>  sign up for $1.00 INPUT  your USERNAME and PASSWORDBELOW- PLEASE PUT THE REASON FOR WANTING CREDIT ENRICHMENT </div>
+                            <div class="form-text">ie: Buy a house, Refinance, buy a car etc.</div>
+                            <div class="p-3">
+                                {{form.creditEnrichment | as_crispy_field}}
+                            </div>
+                                
+                            <br>
+                            
+                            <div class="btns-group">
+                                <a href="#" class="btn btn-outline-warning btn-prev">Previous</a>
+                                <a href="#" class="btn btn-outline-warning btn-next">Next</a>
+                            </div>
+                        </div>
+                        <div class="form-step ">
+                            <label for="scores">
+                                <h1>Credit Scores</h1>
+                            </label>
+                            <hr>
+                            <div class="form-text">
+                                Equifax  / Transunion  / Experian
+                            </div>
+                            <div class="p-3">
+                                {{form.scores | as_crispy_field}}
+                            </div>
+                            <br>
+                            <div class="btns-group">
+                                <a href="#" class="btn btn-outline-warning btn-prev">Previous</a>
+                                <a href="#" class="btn btn-outline-warning btn-next">Next</a>
+                            </div>
+                        </div>
+                        <div class="form-step ">
+                            <label for="name"><h1>Name*</h1></label>
+                            <hr>
+                            <div class="btns-group" role="group">
+                                {{form.name | as_crispy_field}}{{form.lastName | as_crispy_field}}
+                                
+                            </div>
+                                <br>
+                        
+                        <div class="btns-group">
+                            <a href="#" class="btn btn-outline-warning btn-prev">Previous</a>
+                            <a href="#" class="btn btn-outline-warning btn-next">Next</a>
+                        </div>
+                        </div>
+                        <div class="form-step ">
+                                <label for="dob"><h1>Date of Birth</h1></label>
+                                <hr>
+                                <div class="form-text">MM/DD/YY</div>
+                                <div class="justify-content-center">
+                                    {{form.dateOfBirth | as_crispy_field}}
+                                </div>
+                                <div class="btns-group">
+                                    <a href="#" class="btn btn-outline-warning btn-prev">Previous</a>
+                                    <a href="#" class="btn btn-outline-warning btn-next">Next</a>
+                                </div>
+                        </div>
+                        <div class="form-step ">
+                                <label for="numberSec"><h1>Social Security Number/ State originally issued*</h1></label>
+                                <hr>
+                                {{form.numberSecurity | as_crispy_field}}
+                            <br>
+                            <div class="btns-group">
+                                <a href="#" class="btn btn-outline-warning btn-prev">Previous</a>
+                                <a href="#" class="btn btn-outline-warning btn-next">Next</a>
+                            </div>
+                        </div>
+                        <div class="form-step ">
+                            <label for="license"><h1>Drivers License / ID *</h1></label>
+                            <hr>
+                            <div class="form-text">STATE/ ISSUE DATE / EXP DATE</div>
+                            </label>
+                                <label class="form-label" for="flexcheckdefault"></label>
+                            {{form.driversLicense | as_crispy_field}}
+                            <br>
+                            <div class="btns-group">
+                                <a href="#" class="btn btn-outline-warning btn-prev">Previous</a>
+                                <a href="#" class="btn btn-outline-warning btn-next">Next</a>
+                            </div>
+                        </div>
+                        <div class="form-step ">
+                            <label for="marital"><h1>Marital Status:*</h1></label>
+                            <hr>
+                            <div class="form-check" >
+                                {{form.marital }}
+                            </div>
+                            
+                            <br>
+                            
+                            <div class="btns-group">
+                                <a href="#" class="btn btn-outline-warning btn-prev">Previous</a>
+                                <a href="#" class="btn btn-outline-warning btn-next">Next</a>
+                
+                            </div>
+                        </div>
+                        <div class="form-step ">
+                            <label for="email"><h1>E-mail*</h1></label>
+                            <hr>
+                            {{form.email | as_crispy_field}}  
+                            <br>          
+                            <div class="btns-group">
+                                <a href="#" class="btn btn-outline-warning btn-prev">Previous</a>
+                                <a href="#"class='btn btn-outline-warning btn-next'>Next</a>
+                
+                            </div>
+                        </div>
+                        <div class="form-step ">
+                            <label for="phone"><h1>Home Phone*</h1></label>
+                            <hr>
+                            <div class="btns-group">
+                                {{form.codeArea | as_crispy_field}}
+                                {{form.phoneNumber | as_crispy_field}}
+                            </div>
+                            <br>
+                            <div class="btns-group">
+                                <a href="#" class="btn btn-outline-warning btn-prev">Previous</a>
+                                <a href="#" class="btn btn-outline-warning btn-next">Next</a>
+                            </div>
+                        </div>
+                        <div class="form-step ">
+                            <label for="cell"><h1>Cell Phone*</h1></label>
+                            <hr>
+                            <div class="btns-group">
+                                {{form.codeCellArea | as_crispy_field}}
+                                {{form.cellNumber | as_crispy_field}}
+                            </div>
+                            <br>
+                            <div class="btns-group">
+                                <a href="#" class="btn btn-outline-warning btn-prev">Previous</a>
+                                <a href="#" class="btn btn-outline-warning btn-next">Next</a>
+                            </div>
+                        </div>
+                        <div class="form-step ">
+                            <label for="adress"><h1>Adress*</h1></label>
+                            <hr>
+                            <div class="btns-group">
+                                {{form.streetAdress | as_crispy_field}}
+                                {{form.aptAdress | as_crispy_field}}
+                            </div>
+                                
+                                <div class="btns-group">
+                                        {{form.city | as_crispy_field}}
+                                        {{form.state | as_crispy_field}}
+                                </div>
+                                    {{form.zipCode | as_crispy_field}}
+                                <br>
+                                <div class="btns-group">
+                                    <a href="#" class="btn btn-outline-warning btn-prev">Previous</a>
+                                    <a href="#" class="btn btn-outline-warning btn-next">Next</a>
+                                </div>
+                                
+                        </div>
+                        
+                        <div class="form-step ">
+                            <label for="phone"><h1>Month and Year when you moved into current address?
+                            </h1></label>
+                            <hr>
+                            {{form.moved | as_crispy_field}}
+                            <br>
+                            <div class="btns-group">
+                                <a href="#" class="btn btn-outline-warning btn-prev">Previous</a>
+                                <a href="#" class="btn btn-outline-warning btn-next">Next</a>
+                            </div>
+                        </div>
+                        <div class="form-step ">
+                            <label for="phone"><h1>If less than 2 years list Previous address - From / To MM/YY</h1></label>
+                            <hr>
+                            {{form.previousAdress | as_crispy_field}}
+                            <br>
+                            <div class="btns-group">
+                                <a href="#" class="btn btn-outline-warning btn-prev">Previous</a>
+                                <a href="#" class="btn btn-outline-warning btn-next">Next</a>
+                            </div>
+                        </div>
+                        <div class="form-step ">
+                            <label for="phone"><h1>Present Employer*</h1> </label>
+                            <hr>
+                            <div class="form-text">Years At Current employer</div>
+                            {{form.employer | as_crispy_field}} 
+                            <br>           
+                            <div class="btns-group">
+                                <a href="#" class="btn btn-outline-warning btn-prev">Previous</a>
+                                <a href="#" class="btn btn-outline-warning btn-next">Next</a>
+                            </div>
+                        </div>
+                        <div class="form-step ">
+                            <label for="referred" class="form-label"><h1>Hire Date MM/DD/YY?</h1></label>
+                            <hr>
+                            <div class="p-3">
+                                {{form.hireDate | as_crispy_field}}
+                            </div>
+                            
+                            <br>
+                            <div class="btns-group">
+                                <a href="#" type="button" class="btn btn-outline-warning btn-prev">Previous </a>
+                                <a href="#" type="button" class="btn btn-outline-warning btn-next">Next </a>
+                
+                            </div>
+                        </div>
+                        <div class="form-step ">
+                            <label for="referred" class="form-label"><h2>IF Self Employed/ Business Name  &  EIN (Employee ID Number)/Year Business started / LLC, S Corp, or Sole Prop IF NO BIZ put N/A</h2></label>
+                            <hr>
+                            <div class="form-text" id="referredhelp">ADDRESS  AND PHONE NUMBER </div>
+                            
+                            <div class="p-3">
+                                {{form.employeeId |as_crispy_field}}
+                            </div>
+                            
+                            <br>
+                            <div class="btns-group">
+                                <a href="#" type="button" class="btn btn-outline-warning btn-prev ">Previous </a>
+                                <a href="#" type="button" class="btn btn-outline-warning btn-next ">Next </a>
+                
+                            </div>
+                            
+                        </div>
+                        <div class="form-step ">
+                            <label for="phone"><h1>Occupation/Title*</h1></label>
+                            <hr>
+                            <div class="form-text" id="referredhelp">What you do for work </div>
+                                {{form.work | as_crispy_field}}  
+                                <br>          
+                            <div class="btns-group">
+                                <a href="#" class="btn btn-outline-warning btn-prev">Previous</a>
+                                <a href="#" class="btn btn-outline-warning btn-next">Next</a>
+                            </div>
+                        </div>
+                        <div class="form-step ">
+                            <label for="phone"><h1>Gross monthly income*</h1></label>
+                            <hr>
+                            <div class="form-text" id="referredhelp">Before Taxes are taken out. Put hourly or Yearly income </div>
+                                {{form.gross | as_crispy_field}}
+                            <br>
+                            <div class="btns-group">
+                                <a href="#" class="btn btn-outline-warning btn-prev">Previous</a>
+                                <a href="#" class="btn btn-outline-warning btn-next">Next</a>
+                            </div>
+                        </div>
+                        <div class="form-step ">
+                            <label for="phone"><h1>1. Current monthly rent or mortgage *</h1></label>
+                            <hr>
+                            <div class="form-text" id="referredhelp">Dollar amount you pay currently </div>
+                                {{form.rent | as_crispy_field}}
+                            <br>
+                            <div class="btns-group">
+                                <a href="#" class="btn btn-outline-warning btn-prev">Previous</a>
+                                <a href="#" class="btn btn-outline-warning btn-next">Next</a>
+                            </div>
+                        </div>
+                        <div class="form-step ">
+                            <label for="phone"><h1>Do you have any LIFE Insurance?</h1></label>
+                            <hr>
+                            <div class="form-text" id="referredhelp">Term, Whole or NONE?</div>
+                                {{form.insurance | as_crispy_field}}
+                            <br>
+                            <div class="btns-group">
+                                <a href="#" class="btn btn-outline-warning btn-prev">Previous</a>
+                                <a href="#" class="btn btn-outline-warning btn-next">Next</a>
+                            </div>
+                        </div>
+                        <div class="form-step ">
+                            <label for="phone"><h1>Reason for loan and loan amount?</h1></label>
+                            <hr>
+                            <div class="form-text" id="referredhelp">If no loan please put NA</div>
+                                {{form.loan |as_crispy_field}}
+                            <br>
+                            <div class="btns-group">
+                                <a href="#" class="btn btn-outline-warning btn-prev">Previous</a>
+                                <a href="#" class="btn btn-outline-warning btn-next">Next</a>
+                            </div>
+                        </div>
+                        <div class="form-step ">
+                            <label for="phone"><h3>I authorize Rios Financial Group, LLC and its prospective Credit Grantors/Lending/Leasing Companies to obtain personal and credit information about me from my employer and credit bureau, or credit reporting agency, any person who has or may have any financial dealing with me, or from any references I have provided. This information, as well as that provided by me in the application, will be referred to in connection with this credit and any other relationships we may establish from time to time. Any personal and credit information obtained may be disclosed from time to time to other lenders, credit bureaus or other credit reporting agencies.*</h3></label>
+                            <hr>
+                            <div class="form-check mb-3">
+                                <label class="form-check-label" for="fexamplecheck1">
+                                    {{form.authorize}}
+                                    Yes
+                                </label>
+                                   
+                                
+                            </div>
+                            <br>
+                            <div class="btns-group">
+                                <a href="#" class="btn btn-outline-warning btn-prev">Previous</a>
+                                <a href="#" class="btn btn-outline-warning btn-next">Next</a>
+                            </div>
+                        </div>
+                        <div class="form-step ">
+                            <label ><h3>I hereby agree that the information given is true, accurate and complete as of the date of this application submission for the purchase of future receivables including merchant cash advance transactions. **</h3></label>
+                            <hr>
+                            <div class="form-check mb-3  ">
+                                <label class="form-check-label" for="fexampleCheck1">
+                                    {{form.agree }}
+                                    Yes
+                                </label>
+                            <div class="btns-group">
+                                <a href="#" class="btn btn-outline-warning btn-prev">Previous</a>
+                                <a href="#" class="btn btn-outline-warning btn-next">Next</a>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="form-step ">
+                            <label for="terms"><h1>Please agree to terms and conditions.</h1></label>
+                            <hr>
+                            <div class="row">
+                                <label class="form-check-label" for="fexampleCheck1">
+                                    {{form.agreeTerms }}
+                                    I agree to <a href="www.example.com">terms & conditions.</a>* 
+                                </label>
+                            <div class="btns-group">
+                                <a href="#" class="btn btn-outline-warning btn-prev">Previous</a>
+                                <a href="#" class="btn btn-outline-warning btn-next">Next</a>
+                
+                            </div>
+                            </div>
+                        </div> 
+                        <div class="form-step ">
+                            <label for="sign" class="form-label text-center"><h1>Please Sign</h1>
+                                <canvas name="sign" id="canvas" class="border-radius-5"></canvas>
+                            
+                            </label>
+            
+
+                            <br>
+
+                            <input type="file" name="txtfot" class="form-control form-control-lg" value="Upload">
+                            <a href="#" id="btnLimpiar" class="btn w-lg btn-outline-info m-3">Clear</a>
+                            <a href="#" id="btnDescargar" class="btn w-lg btn-outline-info m-3">Download</a>
+            
+                            <br>
+                            <div class="btns-group">
+                                <input type="btn" value="Previous" class="btn btn-outline-warning btn-prev">
+                                <input type="submit" value="send" class="btn btn-outline-warning">
+            
+                            </div>
+                           </div>                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+{% endblock %}
