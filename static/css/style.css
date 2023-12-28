@@ -30,11 +30,27 @@ video {
     min-height: 80lvh;
 }
 label{
-    font-size:2rem;
-    margin: 1rem;
-    color:#fff;
+   display: none;
 
 }
+.form-check label{
+    display: contents;
+    color: #fff;
+    font-size: xx-large;
+}
+.form-check-label {
+    color: #fff;
+    font-size: xx-large;
+}
+.btns-group label{
+    display: contents;
+    color: #fff;
+    font-size: xx-large;
+}
+h1, h2, h3{
+    color: #fff;
+}
+
 .form-text{
     font-size: 1.4rem;
     margin: 1rem;

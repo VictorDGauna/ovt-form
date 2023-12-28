@@ -4,3 +4,4 @@ from .models import Bildens_model
 class Bildens_modelResouce(resources.ModelResource):
     class Meta:
         model = Bildens_model
+        fields = '__all__'

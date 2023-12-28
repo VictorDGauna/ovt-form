@@ -5,7 +5,6 @@ from .models import Bildens_model
 class BildenForm(forms.ModelForm):
     
     
-    
     class Meta:
         model = Bildens_model
        
