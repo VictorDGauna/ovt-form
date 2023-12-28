@@ -7,6 +7,24 @@ form{
     position:relative;
     z-index: 2;
 }
+.congrats{
+
+    width: 50rem;
+    height: 30rem;
+    background-color: #000;
+    opacity: .5;
+    position:relative;
+    font-size: 10rem;
+    font-family:Arial, Helvetica, sans-serif;
+    z-index: 2;
+    color: #fff;
+    border-radius: 3rem;
+    border-color: 1rem solid aqua;
+}
+.congrats h1{
+    font-size: xx-large;  
+    z-index: 3;  
+}
 video {
     position: fixed;
     top: 0;
