@@ -1,3 +1,13 @@
-pillow
+asgiref==3.7.2
+crispy-bootstrap5==2023.10
+Django==5.0
+django-admin-interface==0.28.0
+django-colorfield==0.11.0
+django-crispy-forms==2.1
+Pillow==10.1.0
+python-slugify==8.0.1
+sqlparse==0.4.4
+text-unidecode==1.3
+tzdata==2023.3
 django-admin-interface
-django-crispy-forms
+django-import-export
