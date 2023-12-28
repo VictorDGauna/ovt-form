@@ -10,7 +10,7 @@
             <div class="card">
                 <div class="card-body">
                    
-                    <form action="{% url 'success' %}" method="POST" enctype="multipart/form-data">
+                    <form action="{% url 'success' %}" class="needs-validation" method="POST" enctype="multipart/form-data">
                         {% csrf_token %}
                         <div class="form-step form-step-active">
                             <label for="referred" class="form-label"><h1>Who Referred You?</h1></label>
@@ -367,8 +367,10 @@
 
                             <br>
 
-                            <input type="file" name="txtfot" class="form-control form-control-lg" value="Upload">
+                            {{form.imagen | as_crispy_field}}
+                            <!-- <input type="file" name="txtfot" class="form-control form-control-lg" value="Upload"> -->
                             <a href="#" id="btnLimpiar" class="btn w-lg btn-outline-info m-3">Clear</a>
+
                             <a href="#" id="btnDescargar" class="btn w-lg btn-outline-info m-3">Download</a>
             
                             <br>

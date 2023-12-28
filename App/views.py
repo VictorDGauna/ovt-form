@@ -9,30 +9,10 @@ def getIndex(request):
    
 
 def save_form(request):
-    
-    data ={
-        'form':BildenForm()
-    }
     if request.method == 'POST':
-        bild = BildenForm(data=request.POST)
-        if bild.is_valid():
-            bild.save()
-        else:
-            data['form'] = bild
-      
-    return render(request, 'success.html', data)
+        form = BildenForm(request.POST, request.FILES)
+        if form.is_valid():
+           form.save()
     
+    return render(request, 'success.html',{'form':form})
     
-    
-    
-    # if request.method == 'POST':
-    #     try:
-    #         fot = request.FILES['txtfot']
-    #     except:
-    #         fot = 'media/Firma_6.png'
-    #     canv = Bildens_model( imagen=fot)
-    #     canv.save()
-        
-    #     return render(request, 'success.html')
-    # else:
-    #     return render(request, 'success.html')

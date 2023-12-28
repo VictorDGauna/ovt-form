@@ -16,8 +16,8 @@ class BildenForm(forms.ModelForm):
         
         widgets ={
             'who':forms.Textarea(attrs={'id':'who','name':'who'} ),
-            'creditEnrichment':forms.Textarea(attrs={'id':'reffered','name':'reffered'} ),
-            'dateOfBirth':forms.DateInput(attrs={'type':'date'}),
+            'creditEnrichment':forms.Textarea(attrs={'id':'reffered',} ),
+            'dateOfBirth':forms.DateInput(attrs={'type':'date',}),
             'name':forms.TextInput(attrs={'placeholder':'name..'}),
             'lastName':forms.TextInput(attrs={'placeholder':'last name..'}),
             'email':forms.EmailInput(attrs={'placeholder':'example@example.com'}),
@@ -25,9 +25,10 @@ class BildenForm(forms.ModelForm):
             'authorize': forms.CheckboxInput(attrs={'type':'checkbox', 'id':'fexamplecheck1', 'class':'form-check-input','name':'fexamplecheck1'}),
             'agree': forms.CheckboxInput(attrs={'class':'form-check-input'}),
             'agreeTerms': forms.CheckboxInput(attrs={'class':'form-check-input'}),
-            
-            
-            
-            
+            'imagen':forms.FileInput(attrs={'class':'form-control'})
         }
-        
+        def __init__(self, *args, **kwargs):
+            super().__init__(*args, **kwargs)
+            
+            self.fields['imagen'].widget.attrs.update(
+                {'accept': '.jpg, .jpeg, .png, .gif'}) 
