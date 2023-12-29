@@ -101,7 +101,7 @@ WSGI_APPLICATION = 'bilden.wsgi.application'
 # }
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgresql://postgres:postgres@localhost/postgres',
+        default='postgres://ovtform_user:QM2eNWrvdY4tCUsds71W8K8fPTD9Ei6I@dpg-cm74rcmn7f5s73cbt9lg-a/ovtform',
         conn_max_age=600,
         
         
