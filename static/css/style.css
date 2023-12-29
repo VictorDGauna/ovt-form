@@ -54,16 +54,16 @@ label{
 .form-check label{
     display: contents;
     color: #fff;
-    font-size: xx-large;
+    font-size: large;
 }
 .form-check-label {
     color: #fff;
-    font-size: xx-large;
+    font-size: large;
 }
 .btns-group label{
     display: contents;
     color: #fff;
-    font-size: xx-large;
+    font-size: large;
 }
 h1, h2, h3{
     color: #fff;
