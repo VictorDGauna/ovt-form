@@ -1,143 +1,162 @@
-body{
-    padding: 0;
-    margin: 0;
-    width: auto;
-    height: auto;
-}
-#hero{
-    min-height: 100vh;
-    position:relative;
+@media screen and (max-width: 700px) {
+    
 
-}
-form{
-    position:relative;
-    z-index: 2;
-}
-.congrats{
+    body{
+        padding: 0;
+        margin: 0;
+        width: auto;
+        height: auto;
+    }
+    #hero{
+        min-height: 100vh;
+        position:relative;
 
-    width: 50rem;
-    height: 30rem;
-    background-color: #000;
-    opacity: .5;
-    position:relative;
-    font-size: 10rem;
-    font-family:Arial, Helvetica, sans-serif;
-    z-index: 2;
-    color: #fff;
-    border-radius: 3rem;
-    border-color: 1rem solid aqua;
-}
-.congrats h1{
-    font-size: xx-large;  
-    z-index: 3;  
-}
-video {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    }
+    form{
+        position:relative;
+        z-index: 2;
+    }
+    .congrats{
+
+        width: 50rem;
+        height: 30rem;
+        background-color: #000;
+        opacity: .5;
+        position:relative;
+        font-size: 10rem;
+        font-family:Arial, Helvetica, sans-serif;
+        z-index: 2;
+        color: #fff;
+        border-radius: 3rem;
+        border-color: 1rem solid aqua;
+    }
+    .congrats h1{
+        font-size: xx-large;  
+        z-index: 3;  
+    }
+    video {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .layout{
+        position:fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background:#000;
+        opacity: 0.5;
+        mix-blend-mode: overlay;
+    }
+    .padre{
+        min-height: 80lvh;
+    }
+    label{
+    display: none;
+
+    }
+    .form-check label{
+        display: contents;
+        color: #fff;
+        font-size: large;
+    }
+    .form-check-label {
+        color: #fff;
+        font-size: large;
+    }
+    .btns-group label{
+        display: contents;
+        color: #fff;
+        font-size: large;
+    }
+    h1, h2, h3{
+        color: #fff;
+    }
+
+    .form-text{
+        font-size: 1.4rem;
+        margin: 1rem;
+        color:#fff;
+
+    }
+
+
+
+    .card{
+        border:none;
+        background-color: transparent;
+    }
+    .btn{
+        font-size: 1.3rem;
+        border-radius: 1rem;
+    }
+    .form-step{
+        display: none;
+        animation: animate 0.5s;
+
+    }
+    .form-step-active{
+        display:block;
+    }
+    
+    .btns-group{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    select{
+        height: 5rem;
+        font-size: 3rem;
+        font-weight: bold;
+    }
+    option{
+        font-size: 1.5rem;
+    }
+    .area-text{
+        padding: 1rem;
+        border-radius: 0.8rem;
+        border: transparent;
+    }
+    .btns-group input{
+    
+        margin-bottom: 1rem;
+    }
+    .dob{
+        width: 70%;
+        height: 3rem;
+        margin: 1rem;
+        border-radius: 1rem;
+    }
+    .date{
+        text-align: center;
+        width: 100vh;
+        font-size: large;
+    }
+    .date input{
+        text-align: center;
+    }
+    hr{
+        color: #fff;
+        font-weight: bolder;
+    }
 }
 
-.layout{
-    position:fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background:#000;
-    opacity: 0.5;
-    mix-blend-mode: overlay;
-}
-.padre{
-    min-height: 80lvh;
-}
-label{
-   display: none;
-
-}
 .form-check label{
     display: contents;
     color: #fff;
-    font-size: large;
+    font-size: xx-large;
 }
 .form-check-label {
     color: #fff;
-    font-size: large;
+    font-size: xx-large;
 }
 .btns-group label{
     display: contents;
     color: #fff;
-    font-size: large;
+    font-size: xx-large;
 }
-h1, h2, h3{
-    color: #fff;
-}
-
-.form-text{
-    font-size: 1.4rem;
-    margin: 1rem;
-    color:#fff;
-
-}
-
-
-
-.card{
-    border:none;
-    background-color: transparent;
-}
-.btn{
-    font-size: 1.3rem;
-    border-radius: 1rem;
-}
-.form-step{
-    display: none;
-    animation: animate 0.5s;
-
- }
- .form-step-active{
-    display:block;
- }
- 
- .btns-group{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
- }
-select{
-    height: 5rem;
-    font-size: 3rem;
-    font-weight: bold;
- }
- option{
-    font-size: 1.5rem;
- }
- .area-text{
-    padding: 1rem;
-    border-radius: 0.8rem;
-    border: transparent;
- }
- .btns-group input{
-  
-    margin-bottom: 1rem;
- }
- .dob{
-    width: 70%;
-    height: 3rem;
-    margin: 1rem;
-    border-radius: 1rem;
- }
- .date{
-    text-align: center;
-    width: 100vh;
-    font-size: large;
- }
- .date input{
-    text-align: center;
- }
- hr{
-    color: #fff;
-    font-weight: bolder;
- }
