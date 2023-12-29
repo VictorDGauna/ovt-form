@@ -1,18 +1,18 @@
 // TINY EDITOR SCRIPT
-tinymce.init({
-  selector: '#who',
-  branding:false,
-  menubar:false,
-  statusbar: false,
-  toolbar:
-    "forecolor | bold | italic |underline | fullscreen | media | image | emoticons",
-  plugins: "image, emoticons, media , fullscreen, autoresize",
-  max_height: 500,
-  max_width: 800,
-  min_height: 250,
-  min_width: 200, 
+// tinymce.init({
+//   selector: '#who',
+//   branding:false,
+//   menubar:false,
+//   statusbar: false,
+//   toolbar:
+//     "forecolor | bold | italic |underline | fullscreen | media | image | emoticons",
+//   plugins: "image, emoticons, media , fullscreen, autoresize",
+//   max_height: 500,
+//   max_width: 800,
+//   min_height: 250,
+//   min_width: 200, 
   
-});
+// });
 // 
 // ********************VARIABLES*******************
 // 
