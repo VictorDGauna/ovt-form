@@ -94,9 +94,10 @@ WSGI_APPLICATION = 'bilden.wsgi.application'
 #         "PASSWORD": "death",
 #     }
 # }
+DATABASE_URL = 'postgres://ovt:AgXIIuFqGb7dzwpHlvSRxLYH3kp3Trl6@dpg-cm78vl8cmk4c738s8nhg-a/ovt'
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgres://ovtform_user:QM2eNWrvdY4tCUsds71W8K8fPTD9Ei6I@dpg-cm74rcmn7f5s73cbt9lg-a/ovtform',
+        default='postgres://ovt:AgXIIuFqGb7dzwpHlvSRxLYH3kp3Trl6@dpg-cm78vl8cmk4c738s8nhg-a/ovt',
         conn_max_age=600,
         
         
