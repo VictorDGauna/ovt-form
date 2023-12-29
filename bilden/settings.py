@@ -34,8 +34,6 @@ if RENDER_EXTERNAL_HOSTNAME:
 # Application definition
 
 INSTALLED_APPS = [
-    "admin_interface",
-    "colorfield",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -48,8 +46,7 @@ INSTALLED_APPS = [
     'import_export',
 ]
 
-X_FRAME_OPTIONS = "SAMEORIGIN"
-SILENCED_SYSTEM_CHECKS = ["security.W019"]
+
 
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
@@ -96,6 +93,8 @@ WSGI_APPLICATION = 'bilden.wsgi.application'
 #     "default": {
 #         "ENGINE": "django.db.backends.sqlite3",
 #         "NAME": "mydatabase",
+#         "USER": "chronos",
+#         "PASSWORD": "death",
 #     }
 # }
 DATABASES = {
