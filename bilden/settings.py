@@ -34,6 +34,8 @@ if RENDER_EXTERNAL_HOSTNAME:
 # Application definition
 
 INSTALLED_APPS = [
+    "admin_interface",
+    "colorfield",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -45,7 +47,8 @@ INSTALLED_APPS = [
     'crispy_bootstrap5',
     'import_export',
 ]
-
+X_FRAME_OPTIONS = "SAMEORIGIN"
+SILENCED_SYSTEM_CHECKS = ["security.W019"]
 
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
@@ -88,20 +91,20 @@ WSGI_APPLICATION = 'bilden.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": "mydatabase",
-        "USER": "chronos",
-        "PASSWORD": "death",
-    }
-}
 # DATABASES = {
-#     'default': dj_database_url.config(
-#         default='postgresql://postgres:postgres@localhost/postgres',
-#         conn_max_age=600
-#     )
+#     "default": {
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": "mydatabase",
+#         "USER": "chronos",
+#         "PASSWORD": "death",
+#     }
 # }
+DATABASES = {
+    'default': dj_database_url.config(
+        default='postgresql://postgres:postgres@localhost/postgres',
+        conn_max_age=600
+    )
+}
 
 
 # Password validation
