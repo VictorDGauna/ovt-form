@@ -14,5 +14,5 @@ def save_form(request):
         if form.is_valid():
            form.save()
     
-    return render(request, 'success.html',{'form':form})
+    return render(request, 'templates/success.html',{'form':form})
     
