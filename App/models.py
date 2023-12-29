@@ -3,7 +3,7 @@ from datetime import datetime
 
 # Create your models here.
 class Bildens_model(models.Model):
-    who = models.TextField('Who Reffered',max_length=100, blank=True, null=True)
+    who = models.TextField('Who Reffered', blank=True, null=True)
     CREDIT_ENRICHMENT='Credit Enrichment'
     INSURANCE='Insurance'
     TAXES='Taxes'
