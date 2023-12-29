@@ -88,20 +88,20 @@ WSGI_APPLICATION = 'bilden.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.sqlite3",
-#         "NAME": "mydatabase",
-#         "USER": "chronos",
-#         "PASSWORD": "death",
-#     }
-# }
 DATABASES = {
-    'default': dj_database_url.config(
-        default='postgresql://postgres:postgres@localhost/postgres',
-        conn_max_age=600
-    )
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": "mydatabase",
+        "USER": "chronos",
+        "PASSWORD": "death",
+    }
 }
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         default='postgresql://postgres:postgres@localhost/postgres',
+#         conn_max_age=600
+#     )
+# }
 
 
 # Password validation
