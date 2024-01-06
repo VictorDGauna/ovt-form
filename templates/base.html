@@ -11,34 +11,42 @@
     rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
     crossorigin="anonymous"/>
-
-    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="icon" href="/static/logo.png" type="image/x-icon">
+    {% block style%}{% endblock%}
+    <!-- ************JQUERY*************** -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  
 
     <title>{% block tittle %}{% endblock %}</title>
 </head>
 <body>
+  <header class="header">
+    <div class="logo">
+      <img src="/static/logo-bg.jpeg" alt="">
+    </div>
+    <h1 >Rios Business Funding</h1>
+
+  </header>
  <!-- ********************  FORMS  ******************* -->
 
    {% block content %}
    {% endblock %}
 
- <!-- ********************VIDEOS & LAYOUT********** -->
+ <!-- ********************FOOTER********** -->
+ <footer>
 
-      <video muted autoplay loop>
-          <source
-            src="/static/glacier_express_-_45569 (720p).mp4"
-            type="video/mp4"
-          />
-        </video>
-      <div class="layout"></div>
-      </main>
+  <div class="container-footer " >
+    <h6>&#9400 Rios Business Funding</h4>
+  </div>
+
+</footer>
       
-  <!-- ******************************SCRIPTS***************** -->
+      
+  <!-- ******************************FOOTER**************** -->
 
-      <script src="/static/js/tinymce/tinymce.min.js"></script>
       <script src="/static/js/index.js"></script>
       <script src="/static/js/canvas.js"></script>
-  
+      
   
   </body>
   </html>

@@ -3,7 +3,7 @@ from datetime import datetime
 
 # Create your models here.
 class Bildens_model(models.Model):
-    who = models.TextField('Who Reffered', blank=True, null=True)
+    who = models.TextField('Who Reffered', blank=True,)
     CREDIT_ENRICHMENT='Credit Enrichment'
     INSURANCE='Insurance'
     TAXES='Taxes'
@@ -35,12 +35,12 @@ class Bildens_model(models.Model):
     driversLicense = models.CharField('Drivers License',max_length=100,default='')
     marital = models.CharField('Marital Status',max_length=10)
     email = models.EmailField('Email',max_length=100,default='')
-    codeArea = models.CharField('Code Area',max_length=100,default='')
+    codeArea = models.CharField('Area Code',max_length=100,default='')
     phoneNumber = models.CharField('Phone Number',max_length=100,default='')
-    codeCellArea= models.CharField('Code Area',max_length=100,default='' )
+    codeCellArea= models.CharField('Area Code',max_length=100,default='' )
     cellNumber= models.CharField('Cell Number',max_length=100,default='' )
     streetAdress= models.CharField('Street Address',max_length=100,default='' )
-    aptAdress= models.CharField('Apt/Address',max_length=100, default='' )
+    aptAdress= models.CharField('Apt/Ste#',max_length=100, default='' )
     city=models.CharField('City',max_length=100, default='' )
     state=models.CharField('State',max_length=100, default='' )
     zipCode=models.CharField('Zip Code',max_length=100,default='' )
@@ -57,7 +57,6 @@ class Bildens_model(models.Model):
     authorize= models.BooleanField('Authorize',null=True)
     agree=models.BooleanField('Agree',null=True)
     agreeTerms=models.BooleanField('Agree Terms', null=True)
-    imagen=models.ImageField('Sign',upload_to='images', null=True)
     
     
     class Meta:
