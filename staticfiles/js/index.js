@@ -14,77 +14,79 @@ const list = ['scores','name','lastName','dateOfBirth','numberSecurity','drivers
 let formStepsNum = 0;
 
 nextBtns.forEach(btn =>{
-    btn.addEventListener("click", ()=>{
+    btn.addEventListener("click", (event)=>{
         const formulario = document.querySelector('.form-step-active');
         const inputs = formulario.querySelectorAll('textarea');
         const listInputs = Array.from(inputs);
-        const inputs2 = formulario.querySelectorAll('select');
+        const inputs2 = formulario.querySelectorAll('input');
         const listInputs2 = Array.from(inputs2);
-        const inputs3 = formulario.querySelectorAll('input');
-        const listInputs3 = Array.from(inputs3);
-        const inputs4 = formulario.querySelectorAll('input[type="checkbox"]');
-        const listInputs4 = Array.from(inputs4);
+        
+        
         if (listInputs.length > 0){
-        console.log(listInputs);
-
+            console.log(listInputs);
             listInputs.forEach(input => {
                 if (list.includes(input.name) && input.value === ""){
                     console.log(input.name);
                     alert("Please complete this field");
                     input.style.border='2px solid red';
-                    input.autofocus = true;
+                    input.focus();
+                    btn.stopImmediatePropagation();
 
-                    btn.preventDefault();
+
                 }
-                
-                
+
             });
-        
+
         }
+
         if (listInputs.length === 0){
             if (listInputs2.length > 0){
-            console.log(listInputs2);
-
+                console.log(listInputs2)
                 listInputs2.forEach(input => {
+                    
                     if (list.includes(input.name) && input.value === "" ){
                         console.log(input.name);
                         alert("Please complete this field");
                         input.style.border='2px solid red';
                         input.autofocus = true;
-                        btn.preventDefault();
-                    
-                     
+                        btn.stopImmediatePropagation()
 
                     }
-                });
-                listInputs4.forEach(input =>{
-                    if(list.includes(input.name) && input.checked === "false" ){
-                        console.log(input.name);
-                        alert("Please complete this field");
-                        input.style.border='2px solid red';
-                        input.autofocus = true;
-                        btn.preventDefault();
-                    }
-                })
-            }
-            else{
-                console.log(listInputs3);
-    
-                listInputs3.forEach(input => {
-                    if (list.includes(input.name) && input.value === ""){
-                        console.log(input.name);
-                        alert("Please complete this field");
-                        input.style.border='2px solid red';
-                        input.autofocus = true;
+                    if (!input.checked && list.includes(input.name) && input.type === 'checkbox'){
+                        console.log(input)
+                        alert('Please Confirm')
+                        btn.stopImmediatePropagation()
 
-                        btn.preventDefault();
-    
-                    }
+
+                    };
+                    if (!input.checked && list.includes(input.name) && input.type === 'radio'){
+                        console.log(input)
+                        let checkedList = []
+
+                        for (let i = 0; i < listInputs2.length; i++) {
+                            if (listInputs2[i].checked) {
+                                console.log(listInputs2[i])
+                                checkedList.push(listInputs2 [i])
+                            }
+
+
+                        }
+                        if (checkedList.length < 1 ){
+
+                            alert('Please Check one Option')
+                            btn.stopImmediatePropagation()
+                        
+                        };
+
+
+                    };
                     
+                return false;    
                 });
-        
             }
-        }
+            
+           
+        };
         
         formStepsNum++;
         updateFormSteps();
@@ -114,4 +116,19 @@ function updateFormSteps(){
 
 
 
+// let isChecked = false;
 
+//             listInputs4.forEach(checkbox => {
+//             if (!checkbox.checked && list.includes(checkbox.name)) {
+//                 alert("Por favor, completa este campo");
+//                 checkbox.style.border = '2px solid red';
+//                 checkbox.focus();
+//                 isChecked = true;
+//             }
+//             });
+
+//             // Si no se ha marcado ningún checkbox, muestra la alerta
+//             if (!isChecked) {
+//                 alert("Por favor, selecciona al menos un checkbox.");
+//                 checkbox.preventDefault()
+//             }

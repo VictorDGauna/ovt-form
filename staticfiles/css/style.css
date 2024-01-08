@@ -241,6 +241,10 @@ main-success{
                    0 30px 30px rgba(0, 0, 0, .3);
     }
   }
+  .link-externo{
+    text-decoration: none;
+    color:black;
+  }
 @media only screen and (max-width: 600px){
     body{
         margin: 0;
